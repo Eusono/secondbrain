@@ -1,0 +1,27 @@
+# Gitignore for Second Brain Framework
+
+# Local Code Overlays
+personal/code/
+work/code/
+
+# Secrets Staging
+secrets/
+*.enc
+*.key
+*.pem
+
+# Python Cache & Environment
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# OS Artifacts
+.DS_Store
+Thumbs.db
+
+# Agent Local Caches
+.claude/
+.gemini/
+.agents/
+.cursor/

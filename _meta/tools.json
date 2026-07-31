@@ -1,0 +1,18 @@
+{
+  "tools": [
+    {
+      "id": "ripgrep",
+      "name": "Ripgrep",
+      "purpose": "Fast codebase grep search engine",
+      "mac_install": "brew install ripgrep",
+      "linux_install": "sudo apt install ripgrep"
+    },
+    {
+      "id": "python3",
+      "name": "Python 3",
+      "purpose": "Health linter and dashboard engine",
+      "mac_install": "brew install python3",
+      "linux_install": "sudo apt install python3"
+    }
+  ]
+}

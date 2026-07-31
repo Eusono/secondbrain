@@ -1,0 +1,35 @@
+{
+  "system": {
+    "os": "macOS / Linux",
+    "architecture": "x86_64 / arm64",
+    "hostname": "localhost",
+    "last_updated": "2026-07-31T10:00:00-05:00"
+  },
+  "installed_tools": [
+    {
+      "name": "python3",
+      "version": "3.10+",
+      "purpose": "Dashboard rendering, linting, health audit, statistics scripts"
+    },
+    {
+      "name": "git",
+      "version": "2.x",
+      "purpose": "Version control, commit log tracking, private remote sync"
+    },
+    {
+      "name": "ripgrep",
+      "version": "14.x",
+      "purpose": "Fast codebase search"
+    }
+  ],
+  "listening_ports": [],
+  "scheduled_jobs": [
+    {
+      "name": "checkpoint-daily",
+      "schedule": "Near end of session / day",
+      "command": "python3 _meta/skillspector.py && python3 _meta/brain-health.py --quick && python3 _meta/brain-stats.py && python3 _meta/brain-dashboard.py",
+      "purpose": "Session sweep, lint/health audit, stats logging, dashboard generation"
+    }
+  ],
+  "access_ledger": []
+}
