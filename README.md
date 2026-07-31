@@ -86,7 +86,7 @@ secondbrain/
 
 Copy and paste this prompt into a fresh AI assistant session (Antigravity, Claude Code, Gemini CLI, or Cursor) to initialize your Second Brain:
 
-```markdown
+````markdown
 You are setting up a personal knowledge workspace ("the brain") for me, from scratch, in the current
 empty directory. Build it exactly to this spec. It is a proven design — don't redesign it, build it.
 Where the spec says a script must exist, write the script yourself and verify it runs before moving on.
@@ -257,7 +257,7 @@ Do not invent content for me — no fake memories, no placeholder session logs, 
 starts empty and true. Where a judgment call is needed, pick the simple option and note it in the dashboard
 rather than asking about everything. When you're done, everything you built must actually run — a script
 that was never executed is a claim, not a tool.
-```
+````
 
 ---
 
@@ -265,7 +265,7 @@ that was never executed is a claim, not a tool.
 
 To apply the advanced **P1–P13 Architecture Upgrades** (Context Split, Health Linter, SkillSpector, Research/Watch Rituals) to an existing repo, paste this prompt:
 
-```markdown
+````markdown
 You are upgrading an existing personal knowledge workspace ("the brain") that was built from a
 one-shot bootstrap prompt. These are the practices its origin brain worked out **after** that
 bootstrap shipped — each one exists because something actually went wrong without it. Apply them
@@ -484,7 +484,7 @@ Append to the lessons ledger (marked as inherited from the origin brain, dated t
 Do not invent content while patching — no fake lessons beyond the three inherited ones, no
 placeholder entries, no example memories. Where a judgment call is needed, pick the simple
 option and note it in the report rather than stalling on questions.
-```
+````
 
 ---
 
