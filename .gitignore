@@ -5,6 +5,7 @@ personal/code/
 work/code/
 
 # Secrets Staging
+local/
 secrets/
 *.enc
 *.key
