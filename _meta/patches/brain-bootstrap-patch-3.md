@@ -5,15 +5,15 @@
 backups, search, rotation, the health checks and the full audit. It includes everything from patch 1 that
 still holds and corrects the parts of patch 1 that were later replaced, so it does not matter whether patch 1
 was ever applied. It contains no personal data, adapts to whatever the brain looks like now, and everything it
-builds must be run to prove it works. Share this file as is, together with `brain-bootstrap-patch-3-guide.md`, the
-plain-language tutorial for the person who owns the brain.
+builds must be run to prove it works. Share this file as is, together with the
+[usage guide](brain-bootstrap-patch-3-guide.md), the plain-language tutorial for the person who owns the brain.
 
 **How to use it:** open a terminal at the brain's root, start the agent, paste everything below the line. It
 asks a few questions once, surveys what exists, applies what is missing, skips what is already there, and
 reports patch notes. Expect a long session. If it runs out of context partway through, start a fresh session
 and paste it again: every step is written to be skipped once it is done.
 
-**Repository numbering:** I publish this as Patch 3 in `secondbrain`. The supplied files were named `brain-bootstrap-patch-2.md` and `brain-bootstrap-patch-2-guide.md`. References to patch 1 in the prompt mean the earlier Architecture Upgrade in README Section 2. The upgrade prompt itself is unchanged.
+**Repository numbering:** I publish this as Patch 3 in `secondbrain`. The supplied files were named `brain-bootstrap-patch-2.md` and `brain-bootstrap-patch-2-guide.md`. References to patch 1 in the prompt mean the earlier [Architecture Upgrade](architecture-upgrade.md). The upgrade prompt itself is unchanged.
 
 ---
 

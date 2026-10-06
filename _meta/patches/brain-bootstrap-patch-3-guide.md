@@ -1,10 +1,10 @@
 # Brain patch 3: how to use it
 
-This guide goes with `brain-bootstrap-patch-3.md`. The patch is what you paste into your agent; this page is for
+This guide goes with the [Patch 3 prompt](brain-bootstrap-patch-3.md). The patch is what you paste into your agent; this page is for
 you. It explains what the patch changes and how to work with your brain afterwards. Command and file names below
 are the defaults; if your agent kept different names for your brain, its patch notes list them.
 
-**Repository numbering:** I publish this as Patch 3 in `secondbrain`. The supplied files were named `brain-bootstrap-patch-2.md` and `brain-bootstrap-patch-2-guide.md`. References to patch 1 in the prompt mean the earlier Architecture Upgrade in README Section 2. The upgrade prompt itself is unchanged.
+**Repository numbering:** I publish this as Patch 3 in `secondbrain`. The supplied files were named `brain-bootstrap-patch-2.md` and `brain-bootstrap-patch-2-guide.md`. References to patch 1 in the prompt mean the earlier [Architecture Upgrade](architecture-upgrade.md). The upgrade prompt itself is unchanged.
 
 This guide describes the brain **after applying Patch 3**, using the source defaults. The blank-slate template does not already include those upgrades; keep your brain's existing names and read the resulting patch notes for any practices that were skipped.
 
