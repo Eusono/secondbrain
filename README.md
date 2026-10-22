@@ -68,7 +68,7 @@ Full prompts live in files rather than in this README. Read the usage notes, the
 | [Patch 4 prompt (Memory & Lessons Funnel)](_meta/patches/brain-bootstrap-patch-4-memory-funnel.md) | Focused upgrade adding Turn-0 `memory/system_*.md` cards, Lesson -> Skill/Memory promotion, and mechanical `lesson_promotion_missing` linting |
 | [Earlier Architecture Upgrade](_meta/patches/architecture-upgrade.md) | Historical reference for P1–P13; use Patch 3 for current upgrades |
 | [Assistant setup](_meta/guides/assistant-setup.md) | Shared context and tool-specific loading |
-| [Optional integrations](_meta/guides/optional-integrations.md) | SkillSpector-inspired scanning, STORM-inspired research, and Context7 documentation prompts |
+| [Optional integrations](_meta/guides/optional-integrations.md) | SOPS + `age` encrypted secret vault setup, SkillSpector-inspired scanning, STORM-inspired research, and Context7 documentation prompts |
 
 Optional integrations are not required to get started. A scan is evidence, not a safety guarantee; review external skills before running them.
 
