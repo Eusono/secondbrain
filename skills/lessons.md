@@ -13,6 +13,7 @@ Each lesson must be appended to the top of the log (newest on top) under a dated
 - **What bit me:** What unexpected behavior or bug occurred?
 - **Why it happened:** What was the underlying root cause?
 - **The fix/prevention:** How was it solved, and how do we prevent it in the future?
+- **Promoted to:** [[memory/system_<name>.md]] (or `- **Disposition:** ledger-only` for one-off UI/doc/hardware issues)
 ```
 
 ---
@@ -23,8 +24,10 @@ Each lesson must be appended to the top of the log (newest on top) under a dated
 - **What bit me:** Executing `git commit` and `git push` during intermediate script fixes or prompt turns violated user constraints and created unwanted micro-commits.
 - **Why it happened:** Assuming code or dashboard edits required immediate remote git synchronization instead of remaining staged/unstaged in the local working tree until session end.
 - **The fix/prevention:** Never run `git commit` or `git push` during regular task execution. Leave all working modifications in the local workspace tree; allow the session-ending `/checkpoint` ritual to handle all commits and pushes exclusively.
+- **Promoted to:** [[constraints.md]], [[skills/rituals/checkpoint.md]]
 
 ### 2026-07-31 — Structural Validation is Not Value Validation
 - **What bit me:** A configuration file or template that parses cleanly with zero syntax errors can still cause catastrophic operational failure at runtime.
 - **Why it happened:** Schema validation verifies formatting and syntax structure, but cannot check if referenced hostnames, IP subnets, or API keys actually exist or are valid.
 - **The fix/prevention:** Remember schema-valid ≠ true. Always perform functional or empirical runtime validation beyond static schema parsing.
+- **Disposition:** ledger-only

@@ -61,7 +61,7 @@ Say `checkpoint`. The agent then:
   do not step on each other;
 - files dated events in the right `SESSIONS.md` and updates the current-state files;
 - parks anything it cannot place in `_inbox/` with a note on why, instead of dropping it;
-- adds lessons (things that surprised it or cost time) and tells you which **existing** lessons it used;
+- adds lessons (things that surprised it or cost time), promotes any reusable tool/system rule into the owning skill or `memory/system_*.md` card (`Promoted to:` vs `Disposition: ledger-only`), and tells you which **existing** lessons or memory cards it used;
 - runs the quick checks, fixes what they find, and checks that no other file still claims the old state of
   something that just changed;
 - checks the **machine** as well as the repo (configs outside the repo that drifted from their copies inside it);

@@ -26,3 +26,11 @@ Thumbs.db
 .gemini/
 .agents/
 .cursor/
+
+# Explicitly track Second Brain context files (overrides global gitignore)
+!AGENTS.md
+!CLAUDE.md
+!GEMINI.md
+!**/AGENTS.md
+!**/CLAUDE.md
+!**/GEMINI.md

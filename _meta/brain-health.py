@@ -50,6 +50,34 @@ class HealthAuditEngine:
                         if f"`{item}/`" not in agents_content and f"`{item}`" not in agents_content:
                             self.add_finding('routing', item, f"Folder '{item}' is missing from AGENTS.md Routing Table")
 
+
+        # 3. Lesson Promotion Check (skills/lessons.md)
+        lessons_path = os.path.join(ROOT_DIR, 'skills', 'lessons.md')
+        if os.path.exists(lessons_path):
+            try:
+                with open(lessons_path, 'r', encoding='utf-8', errors='ignore') as lf:
+                    l_lines = lf.read().splitlines()
+                in_fence = False
+                cur_heading = None
+                has_disp = False
+                for line in l_lines:
+                    if line.strip().startswith('```'):
+                        in_fence = not in_fence
+                        continue
+                    if in_fence:
+                        continue
+                    if re.match(r'^###\s+\d{4}-\d{2}-\d{2}\s+(?:—|–|-)\s+\S', line):
+                        if cur_heading and not has_disp:
+                            self.add_finding('lesson_promotion', 'skills/lessons.md', f"Lesson '{cur_heading}' is missing '- **Promoted to:** [[...]]' or '- **Disposition:** ledger-only'")
+                        cur_heading = line.strip()
+                        has_disp = False
+                    elif cur_heading:
+                        if re.match(r'^\s*-\s*\*\*Promoted to:\*\*\s*.*\[\[[^\]]+\]\]', line) or re.match(r'^\s*-\s*\*\*Disposition:\*\*\s*`?ledger-only`?\b', line, re.I):
+                            has_disp = True
+                if cur_heading and not has_disp:
+                    self.add_finding('lesson_promotion', 'skills/lessons.md', f"Lesson '{cur_heading}' is missing '- **Promoted to:** [[...]]' or '- **Disposition:** ledger-only'")
+            except Exception:
+                pass
     def run_context_budget_check(self):
         # Calculate size of Expertise Context
         expertise_files = ['AGENTS.md', 'constraints.md', 'memory/MEMORY.md']

@@ -11,6 +11,7 @@ A vendor-neutral, file-based knowledge workspace for working with AI coding assi
 | I want to use this template | Make my own copy, then follow the setup steps below. |
 | I want an agent to build a brain in an empty directory | Paste the [initial bootstrap prompt](_meta/patches/initial-bootstrap.md), then apply Patch 3. |
 | I already have a brain | Read the [Patch 3 guide](_meta/patches/brain-bootstrap-patch-3-guide.md), then paste the [Patch 3 prompt](_meta/patches/brain-bootstrap-patch-3.md). Earlier patches are not required. |
+| I already applied Patch 3 and want the Lesson -> Memory Funnel upgrade | Paste the [Patch 4 prompt](_meta/patches/brain-bootstrap-patch-4-memory-funnel.md). |
 
 ### Set up my own copy
 
@@ -64,6 +65,7 @@ Full prompts live in files rather than in this README. Read the usage notes, the
 | [Initial bootstrap](_meta/patches/initial-bootstrap.md) | Build a new brain in an empty directory; follow with Patch 3 |
 | [Patch 3 guide](_meta/patches/brain-bootstrap-patch-3-guide.md) | Applying the current cumulative upgrade and using the result |
 | [Patch 3 prompt](_meta/patches/brain-bootstrap-patch-3.md) | Upgrade an existing brain, whether or not earlier patches were applied |
+| [Patch 4 prompt (Memory & Lessons Funnel)](_meta/patches/brain-bootstrap-patch-4-memory-funnel.md) | Focused upgrade adding Turn-0 `memory/system_*.md` cards, Lesson -> Skill/Memory promotion, and mechanical `lesson_promotion_missing` linting |
 | [Earlier Architecture Upgrade](_meta/patches/architecture-upgrade.md) | Historical reference for P1–P13; use Patch 3 for current upgrades |
 | [Assistant setup](_meta/guides/assistant-setup.md) | Shared context and tool-specific loading |
 | [Optional integrations](_meta/guides/optional-integrations.md) | SkillSpector-inspired scanning, STORM-inspired research, and Context7 documentation prompts |

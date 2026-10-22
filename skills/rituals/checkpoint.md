@@ -30,12 +30,15 @@ Follow these 11 steps in exact sequence:
 ### Step 4: Extract Operational Skills
 - If a recurring how-to pattern emerged, create or update a runbook under `work/runbooks/` or `skills/`.
 
-### Step 5: Log Flywheel Lessons
+### Step 5: Log Flywheel Lessons & Promote Standing Rules
 - If something surprised you or cost time, write one clean dated block in `skills/lessons.md` (newest on top). If everything went as expected, write nothing.
+- Every dated lesson in `skills/lessons.md` MUST end with either `- **Promoted to:** [[path]]` (when the lesson reveals a reusable API/CLI/system rule that was added to `memory/system_*.md` or `skills/<name>/SKILL.md`) or `- **Disposition:** ledger-only` (for one-off incident/UI/hardware findings). `_meta/brain-health.py` / `_meta/brain-lint.py` enforces this mechanically.
 
-### Step 6: File Cross-Cutting Memories
-- Create slug-named files in `memory/<slug>.md` for new cross-cutting facts and register in `memory/MEMORY.md`.
-
+### Step 6: Consolidate Cross-Cutting Memories (Active 3-Question Harvest)
+- Re-read `memory/MEMORY.md` first, then run this 3-question harvest across the session's work:
+  1. **System & Tooling Recipes (`memory/system_*.md` or `skills/<name>/SKILL.md`):** Did we have to look up how a local script, API endpoint, customfield ID, workflow transition, or CLI flag works today, or solve a non-obvious API/CLI error? If yes, upsert the owning system card and ensure it is indexed in `memory/MEMORY.md`.
+  2. **Architecture & Topology:** Did we establish a durable site, service, or architecture fact inside a task/ticket that will still matter after the ticket closes? If yes, upsert the owning `memory/` card.
+  3. **People, Teams & Responsibilities:** Did we learn a new stakeholder role, escalation contact, or team boundary? If yes, upsert the owning `memory/` card and register any new file with a single line in `memory/MEMORY.md`.
 ### Step 7: Report Actions & Perform State Grep
 - Report exact files touched and run a search (`grep`) across the repository to verify no file claims obsolete state.
 

@@ -162,11 +162,16 @@ every harness's command or skill adapter to point at it (thin pointers, never co
 3. **Refresh living bodies** that the session changed, and the root `README.md` "In flight" list. Every In flight
    item carries a date. Never prune it automatically (P10).
 4. **Skills:** a recurring how-I-do-X pattern becomes or updates a file in `skills/`.
-5. **Lessons:** anything that surprised, cost time, or should be done differently goes to `skills/lessons.md`
-   (newest on top). None is a valid answer; never fabricate. The report also names which existing lessons were
-   **consulted or applied** this session, because a lesson nobody loads is indistinguishable from no lesson.
-6. **Memory:** only for cross-cutting facts no folder owns. Re-read `memory/MEMORY.md` immediately before writing,
-   and consolidate into an existing memory if another session filed the same topic meanwhile.
+5. **Lessons & promotion:** anything that surprised, cost time, or should be done differently goes to `skills/lessons.md`
+   (newest on top). None is a valid answer; never fabricate. Every lesson must end with either
+   `- **Promoted to:** [[path]]` (when the lesson reveals a reusable system/API/CLI rule promoted into
+   `skills/<name>/SKILL.md` or `memory/system_*.md`) or `- **Disposition:** ledger-only` (for one-off UI/doc/hardware
+   post-mortems). The report also names which existing lessons or system memory cards were **consulted or applied**
+   this session, because a lesson nobody loads is indistinguishable from no lesson.
+6. **Memory (active 3-question harvest):** re-read `memory/MEMORY.md` immediately before writing, consolidate into an
+   existing card if another session filed the same topic meanwhile, and harvest: (a) reusable system/API/CLI recipes
+   (`memory/system_*.md` or a `memory/system_skill_router.md` map pointing to `skills/<name>/SKILL.md`), (b) durable
+   architecture/site/topology facts that outlive the current ticket, and (c) stakeholder/team ownership boundaries.
 7. **Report** exactly which files were created or updated. If files were dropped into a gitignored inbox, record
    them in the drop ledger (P7).
 7b. **Lint what this checkpoint touched:** run `brain-lint.py` and fix what it finds; stop on any merge-conflict
@@ -283,7 +288,7 @@ cheap and searchable; only the files that load at startup are finite.
   - `rotate-inflight.py --since DATE`: README "In flight" bullets whose leading date is older than the cutoff
     move verbatim to `CHANGELOG.md`, newest first. Undated standing items stay.
   - `rotate-lessons.py --since DATE`: older lesson blocks move verbatim to `skills/lessons-archive.md`, keeping
-    the file's preamble.
+    the file's preamble, after verifying each moved lesson has a `Promoted to:` or `Disposition:` line.
   - `context-budget.py --rotate-file PATH --keep-entries N`: legacy inline history moves from a context file to
     its `SESSIONS.md`. `--rotate-constraints --days N`: older Log entries move to `constraints-log.md`, leaving
     a pointer.
@@ -329,10 +334,11 @@ rank it last. A live number sitting in an always-loaded file is a double finding
   upstream state. FAIL means the shared brain is mechanically incomplete; WARN means machine-local setup needs
   review. It answers "will this brain work if I plug in a different model".
 - `_meta/brain-lint.py` (integrity): dangling `[[wikilinks]]`, memories missing from the index and index lines
-  pointing at nothing, dead paths, unresolved merge-conflict markers, credentials overdue or expiring within
-  seven days (from the ledger), `UNVERIFIED(date)` markers (stale past 30 days, undated flagged at once),
-  aging TODOs, and hard constraint sections changed without a same-dated Log entry. Exit 1 only for blocking
-  integrity failures; expiry and aging stay advisory. Keep a regression test file for the linter and run it
+  pointing at nothing, dead paths, unresolved merge-conflict markers, dated lessons in `skills/lessons.md` missing a
+  `- **Promoted to:** [[...]]` or `- **Disposition:** ledger-only` line (`lesson_promotion_missing`), credentials
+  overdue or expiring within seven days (from the ledger), `UNVERIFIED(date)` markers (stale past 30 days, undated
+  flagged at once), aging TODOs, and hard constraint sections changed without a same-dated Log entry. Exit 1 only for
+  blocking integrity failures; expiry and aging stay advisory. Keep a regression test file for the linter and run it
   before changing the linter: a false negative certifies a broken brain as clean.
 - At `full` and deeper, also the machine snapshot and drift check (P12).
 
